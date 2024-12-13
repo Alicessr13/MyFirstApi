@@ -15,7 +15,8 @@ namespace MyFirstApi.Controllers
         [ProducesResponseType(typeof(User), StatusCodes.Status200OK)]//especificando os tipos de respostas que cada endpoint pode retornar
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
         //public IActionResult Get(int id) //passando parametros pela url (query string)
-        public IActionResult Get([FromHeader]int id, [FromHeader] string nickname) //[] especificando de onde o valor vem, se não colocar nada ele vem da query string, para vir do header precisa especificar
+        public IActionResult GetById([FromHeader]int id, [FromHeader] string nickname)
+        //[] especificando de onde o valor vem, se não colocar nada ele vem da query string, para vir do header precisa especificar (para deixar opcional string?)
         {
             var response = new User
             {
